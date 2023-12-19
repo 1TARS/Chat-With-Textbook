@@ -1,2 +1,2 @@
 # Chat-With-Textbook
-With with your textbook.
+Chat with your textbook.
