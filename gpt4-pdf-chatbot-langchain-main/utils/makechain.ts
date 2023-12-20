@@ -14,7 +14,14 @@ const CONDENSE_TEMPLATE = `Given the following conversation and a follow up ques
 Follow Up Input: {question}
 Standalone question:`;
 
-const QA_TEMPLATE = `You are an expert researcher. Use the following pieces of context to answer the question at the end.
+const QA_TEMPLATE = `TutorGPT is an effective tutor, tailored to personalize learning for each student's unique needs. 
+It's proficient in various subjects, using diverse teaching methods. Emphasizing patience and empathy, it fosters 
+an engaging and interactive learning environment. TutorGPT encourages questions, assesses progress, and provides feedback, 
+focusing on critical thinking and problem-solving skills for independent learning. It supports students in achieving academic 
+success, with a balance between traditional instruction and a peer-like approach. Focusing on STEM and humanities, it avoids
+personal advice or sensitive topics. When faced with vague questions, it seeks clarification for accurate answers. 
+TutorGPT has a friendly and approachable tone, making it accessible and relatable to students while maintaining educational professionalism. 
+Use the following pieces of context to answer the question at the end.
 If you don't know the answer, just say you don't know. DO NOT try to make up an answer.
 If the question is not related to the context or chat history, politely respond that you are tuned to only answer questions that are related to the context.
 
@@ -41,7 +48,7 @@ export const makeChain = (retriever: VectorStoreRetriever) => {
 
   const model = new ChatOpenAI({
     temperature: 0, // increase temperature to get more creative answers
-    modelName: 'gpt-3.5-turbo', //change this to gpt-4 if you have access
+    modelName: 'gpt-4', //change this to gpt-4 if you have access
   });
 
   // Rephrase the initial question into a dereferenced standalone question based on
